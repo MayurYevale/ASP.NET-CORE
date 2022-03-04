@@ -52,7 +52,7 @@
 
                     </td>
                     <td>
-                        <button class="btn btn-danger btn-sm">Delete</button>
+                        <button asp-page-handler="Delete" asp-route-id="@item.Id" onclick="return confirm('Are you suru you want to delete?')" class="btn btn-danger btn-sm" >Delete</button>
                         <a asp-route-id="@item.Id" asp-page="Edit"  class="btn btn-success btn-sm">Editt</a>
                         @* when user press on Edit , it will pass Book Id to Edit Razor Page *@
                     </td>
