@@ -26,6 +26,7 @@ namespace BookListRazor
         public void ConfigureServices(IServiceCollection services)
         {   //below line to include entity framework to pipeline
             services.AddDbContext<ApplicationDbContext>(option => option.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+            services.AddControllersWithViews(); // with this we are adding API calls
             services.AddRazorPages();
         }
 
@@ -52,6 +53,7 @@ namespace BookListRazor
 
             app.UseEndpoints(endpoints =>
             {
+                endpoints.MapControllers();
                 endpoints.MapRazorPages();
             });
         }
